@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400&display=swap");
 body {
   background-color: #080814 !important;
+  overflow-x: hidden;
 }
 
 .brains {
@@ -51,4 +52,49 @@ body {
 
 .headerText:hover span {
   background-size: 100%;
+}
+
+/* vaves */
+
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #6b5da4;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/wavePurple.svg)
+    repeat-x;
+  position: absolute;
+  bottom: -10px;
+  width: 6400px;
+  height: 198px;
+  overflow-x: hidden !important;
+  animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite,
+    swell 8s ease -1.25s infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -40px, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+.endWave {
+  display: none;
 }

@@ -117,7 +117,8 @@ function ResponsiveAppBar() {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography
-                    style={{ fontSize: "2rem" }}
+                    sx={{ fontFamily: "JetBrains Mono", width: "100vw" }}
+                    style={{ fontSize: "1rem", textDecoration: "none" }}
                     textAlign="center"
                     component={Link}
                     to={page.path}
@@ -144,9 +145,7 @@ function ResponsiveAppBar() {
               color: "inherit",
               textDecoration: "none",
             }}
-          >
-            LOGO
-          </Typography>
+          ></Typography>
           <Box
             sx={{
               flexGrow: 1,
@@ -163,11 +162,11 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                className="brains"
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
                   color: "white",
+                  fontFamily: "JetBrains Mono",
                   display: "block",
                   fontSize: "1.2rem",
                 }}
