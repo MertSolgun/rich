@@ -115,7 +115,7 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                   <Typography
                     sx={{ fontFamily: "JetBrains Mono", width: "100vw" }}
                     style={{ fontSize: "1rem", textDecoration: "none" }}
@@ -161,7 +161,7 @@ function ResponsiveAppBar() {
           >
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.id}
                 onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,

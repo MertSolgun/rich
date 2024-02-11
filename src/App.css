@@ -57,25 +57,44 @@ body {
 /* vaves */
 
 .ocean {
-  height: 5%;
   width: 100%;
-  position: absolute;
+  position: sticky;
   bottom: 0;
   left: 0;
-  background: #6b5da4;
+  z-index: -99999 !important;
+  background-color: #ffdc5f;
 }
 
 .wave {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/756881/wavePurple.svg)
-    repeat-x;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%23ffdc5f' stop-opacity='.65' offset='0%35'/%3e%3cstop stop-color='%23fcc900' offset='100%25'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23a)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e"),
+    url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%23f5a524' stop-opacity='.25' offset='0%15'/%3e%3cstop stop-color='%23fcc900' offset='100%15'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23a)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e"),
+    url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='198'%3e%3cdefs%3e%3clinearGradient id='a' x1='50%25' x2='50%25' y1='-10.959%25' y2='100%25'%3e%3cstop stop-color='%f5a524' stop-opacity='.25' offset='0%15'/%3e%3cstop stop-color='%23fcc900' offset='100%15'/%3e%3c/linearGradient%3e%3c/defs%3e%3cpath fill='url(%23a)' fill-rule='evenodd' d='M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z'/%3e%3c/svg%3e");
   position: absolute;
-  bottom: -10px;
+  top: -30px;
   width: 6400px;
-  height: 198px;
-  overflow-x: hidden !important;
-  animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite,
-    swell 8s ease -1.25s infinite;
+  height: 188px;
+  -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
+  opacity: 0.2;
+}
+
+.wave:nth-of-type(2) {
+  top: -10px;
+  -webkit-animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
 }
 
 @keyframes wave {
@@ -86,15 +105,59 @@ body {
     margin-left: -1600px;
   }
 }
+@-webkit-keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
 @keyframes swell {
   0%,
   100% {
-    transform: translate3d(0, -40px, 0);
+    transform: translate3d(0, -25px, 0);
   }
   50% {
-    transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, 5px, 0);
   }
 }
-.endWave {
-  display: none;
+
+.icon {
+  position: relative;
+  bottom: -150px;
+  color: #4954ff;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.typewriter {
+  color: #4954ff;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-size: 3rem;
+  margin: auto;
+  font-family: "JetBrains Mono", monospace;
+}
+
+@media (max-width: 900px) {
+  .ocean {
+    display: none;
+  }
+  .icon {
+    display: none;
+  }
+
+  .typewriter {
+    color: #4954ff;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    font-size: 1.5rem;
+    margin: 40px auto;
+    font-family: "JetBrains Mono", monospace;
+  }
 }

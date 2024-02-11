@@ -1,6 +1,6 @@
 import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-
+import Typewriter from "typewriter-effect";
 const Header = () => {
   const type = {
     color: "white",
@@ -54,6 +54,13 @@ const Header = () => {
             }}
           />
         </Box>
+        <Typewriter
+          options={{
+            strings: ['<h1 class="typewriter">BE RICH WITH ME!</h1>'],
+            autoStart: true,
+            loop: true,
+          }}
+        />
       </Box>
     </Stack>
   );
