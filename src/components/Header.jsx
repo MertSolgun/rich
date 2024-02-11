@@ -7,15 +7,11 @@ const Header = () => {
     fontFamily: "JetBrains Mono",
     fontSize: "4rem",
     margin: "auto",
-    ml: "20px",
+    ml: { lg: "20px", sm: "0px" },
     maxWidth: "600px",
     "@media (max-width:600px)": {
       fontSize: "1.5rem",
       margin: "20px auto",
-    },
-    "@media (max-width:1440px)": {
-      fontSize: "2.5rem",
-      ml: "40px",
     },
   };
   const styles = {
@@ -68,13 +64,13 @@ const Header = () => {
             }}
           />
         </Box>
-        {/* <Typewriter
+        <Typewriter
           options={{
             strings: ['<h1 class="typewriter">BE RICH WITH ME!..</h1>'],
             autoStart: true,
             loop: true,
           }}
-        /> */}
+        />
       </Box>
     </Stack>
   );
