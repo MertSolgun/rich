@@ -5,13 +5,17 @@ const Header = () => {
   const type = {
     color: "white",
     fontFamily: "JetBrains Mono",
-    fontSize: "3rem",
+    fontSize: "4rem",
     margin: "auto",
     ml: "20px",
     maxWidth: "600px",
     "@media (max-width:600px)": {
       fontSize: "1.5rem",
       margin: "20px auto",
+    },
+    "@media (max-width:1440px)": {
+      fontSize: "2.5rem",
+      ml: "40px",
     },
   };
   const styles = {
@@ -28,8 +32,12 @@ const Header = () => {
       className="headerComp"
       sx={{
         margin: "60px auto",
+        height: "calc(69vh - 80px)",
         maxWidth: "1500px",
         justifyContent: "space-between",
+        "@media (max-width:1440px)": {
+          height: "calc(69vh - 130px)",
+        },
       }}
     >
       <Box>
@@ -38,29 +46,35 @@ const Header = () => {
             ...styles,
             flexDirection: { xs: "column", md: "row" },
             textAlign: { xs: "center", md: "left" },
+            marginTop: { md: "30px", xl: "150px" },
           }}
         >
           <Typography component="h1" className="headerText" sx={type}>
-            <span>LET US PROVIDE ALL YOUR SOCIAL MEDIA BOTS.</span>
+            <span className="animate">
+              {" "}
+              LET US PROVIDE ALL YOUR SOCIAL MEDIA BOTS.
+            </span>
           </Typography>
           <img
             src="https://berichwithme.com/public/storage/fg5663.svg"
             loading="lazy"
+            className={window.innerWidth <= 600 ? "noAnimation" : ""}
             style={{
               width: "500px",
               marginRight: "120px",
               margin: "auto",
               maxWidth: "90%",
+              animation: "myAnim 2s ease 0s 1 normal forwards",
             }}
           />
         </Box>
-        <Typewriter
+        {/* <Typewriter
           options={{
-            strings: ['<h1 class="typewriter">BE RICH WITH ME!</h1>'],
+            strings: ['<h1 class="typewriter">BE RICH WITH ME!..</h1>'],
             autoStart: true,
             loop: true,
           }}
-        />
+        /> */}
       </Box>
     </Stack>
   );

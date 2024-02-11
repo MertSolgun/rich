@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import instaLogo from "../assets/instalogo.png";
 import kickLogo from "../assets/kicklogo.png";
 import spotifyLogo from "../assets/spotifylogo.png";
@@ -43,11 +43,29 @@ const Platforms = () => {
     },
   ];
 
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <Container
+      className={
+        scrolled && !(window.innerWidth <= 600) ? "animate" : "noAnimation"
+      }
       maxWidth="lg"
       sx={{
-        my: { xs: 10, lg: 40, md: 30 },
+        mt: { xs: 25, lg: 40, md: 30 },
       }}
     >
       <Typography

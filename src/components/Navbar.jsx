@@ -117,7 +117,7 @@ function ResponsiveAppBar() {
               {pages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
                   <Typography
-                    sx={{ fontFamily: "JetBrains Mono", width: "100vw" }}
+                    sx={{ fontFamily: "JetBrains Mono" }}
                     style={{ fontSize: "1rem", textDecoration: "none" }}
                     textAlign="center"
                     component={Link}

@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400&display=swap");
 body {
   background-color: #080814 !important;
-  overflow-x: hidden;
 }
 
 .brains {
@@ -21,12 +20,13 @@ body {
   content: "";
   position: absolute;
   right: 0;
-  top: 20%;
+  top: 30%;
   left: 45%;
+  z-index: -9999 !important;
   transform: translate(-50%, -50%);
   height: 100%;
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 250px;
+  max-height: 250px;
   z-index: 1;
   background: linear-gradient(
     130deg,
@@ -34,8 +34,22 @@ body {
     #4954ff 54.29%,
     #11c9ff 100%
   );
-  filter: blur(50px);
+  filter: blur(100px);
   animation: slowRotate 10s linear infinite;
+}
+
+@media (max-width: 600px) {
+  .headerComp:before {
+    display: flex;
+    justify-content: start;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    animation: slowRotate 10s linear infinite;
+  }
 }
 
 .headerText span {
@@ -138,9 +152,15 @@ body {
   display: flex;
   justify-content: center;
   margin: auto;
-  font-size: 3rem;
-  margin: auto;
+  font-size: 4rem;
+  margin: 50px auto;
   font-family: "JetBrains Mono", monospace;
+}
+
+@media (max-width: 1440px) {
+  .typewriter {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -159,5 +179,28 @@ body {
     font-size: 1.5rem;
     margin: 40px auto;
     font-family: "JetBrains Mono", monospace;
+  }
+}
+
+/* whyus icon */
+.animate {
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .noAnimation {
+    animation: none !important;
   }
 }

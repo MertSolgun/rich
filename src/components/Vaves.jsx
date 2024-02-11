@@ -3,7 +3,7 @@ import React from "react";
 const Vaves = () => {
   return (
     <div>
-      <div class="icon">
+      <div class="icon animate">
         <i class="fa-solid fa-user"> 178</i>
         <i class="fa-solid fa-user"> 859</i>
         <i class="fa-solid fa-user"> 1.043</i>
