@@ -76,13 +76,15 @@ const WhyUs = () => {
               textAlign: "left",
             }}
           >
-            Three years ago, we chose Kick, a bold platform with promise. Today,
-            it's clear: Kick chose us too. It offered freedom, community, and
-            fair rewards, even amidst growing pains. Now, Kick isn't just a
-            platform, it's an extension of ourselves. We celebrate
-            individuality, innovation, and the connections we forged. So, "why
-            us?" Look at the vibrant tapestry Kick nurtures. That's why we chose
-            it, and it chose us.
+            With our seasoned and skilled team, we excel in optimizing your bots
+            to unparalleled standards, streamlining your operations
+            effortlessly. Backed by four years of industry expertise, we deliver
+            dependable and top-notch services to our clientele. Crafting
+            tailored solutions for your unique needs, we elevate the efficiency
+            of your workflow at every turn. Customer satisfaction remains our
+            utmost priority, as we dedicate ourselves to delivering optimal
+            outcomes for you. Rest assured, your privacy is treated with the
+            utmost care and importance by us!
           </Typography>
         </Box>
         <Box
